@@ -35,6 +35,7 @@ Example of usage on linux command line: python3.7 unmount_flash_disk.py;
 
 def exit_with_error(exit_code,message):
     m="""### ERROR!!! ###
+### Contact your computer advisor. ###
 ### Error message:
 """+str(message)+"""
 ###
@@ -45,11 +46,21 @@ def exit_with_error(exit_code,message):
     sys.exit(exit_code)
 
 def display_message_success():
-    m="""Výborně. Úspěch. Nyní můžete flešku bez obav odebrat.
+    m="""Výborně. Úspěch. 
+Nyní můžete flešku bez obav odebrat.
 
 Přejeme Vám hezký den.
 Nezapomeňte se dnes celý den usmívat.
 Dnes je nádherný den.
+
+----
+
+Great. Success. 
+Now you can safely remove your flash disk without fear.
+
+Have a nice day.
+Don't forget to smile the whole day.
+Today is a beautiful day.
 """
     print(m)
     subprocess.run(["zenity","--info","--ellipsize","--icon-name","weather-clear","--text",m],capture_output=True)
@@ -106,12 +117,27 @@ a můžete ho odebrat.
 Nebo se může jednat o chybu.
 Kontaktujte prosím svého poradce pro počítač.
 
-Text pro poradce pro počítač:
-It seems that flash disk is not mounted
+----
+
+It looks like no flash disk is mounted
+and you can remove it.
+
+Or an error might occur.
+Please contact your computer advisor.
+
+----
+
+For computer adviser:
+
+Output of the command 'lsblk -l' was searched for string '/media/'
+but no match was found.
+This may mean that flash disk is not mounted
 or the mount point is not on an expected path
 in folder '/media/' .
-Run command 'lsblk -l' to see all mount points.
-""")
+
+Output of the command 'lsblk -l' follows:
+
+"""+subprocess.run(["lsblk","-l"],capture_output=True).stdout.decode("utf-8"))
     mount_point_block=path_search.group(1)
     print("""Mount point found under name: """+mount_point_block+"""
 Flash disk mounted to path: """+path_search.group(2))
