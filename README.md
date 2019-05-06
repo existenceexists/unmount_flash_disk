@@ -4,7 +4,7 @@ Unmount USB flash disk so it can be safely removed.
 
 Prepare the application for all possible situations and errors.
 
-Developed for Xubuntu operating system in 2019-05, but it can work on other operating systems and versions too.
+Developed for Xubuntu operating system in 2019-05, but it may work on other operating systems and versions too.
 
 ----
 ### Dependencies
