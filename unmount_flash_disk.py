@@ -46,8 +46,7 @@ def exit_with_error(exit_code,message):
     sys.exit(exit_code)
 
 def display_message_success():
-    m="""Výborně. Úspěch. 
-Nyní můžete flešku bez obav odebrat.
+    m="""Výborně. Úspěch. Nyní můžete flešku bez obav odebrat.
 
 Přejeme Vám hezký den.
 Nezapomeňte se dnes celý den usmívat.
@@ -55,8 +54,7 @@ Dnes je nádherný den.
 
 ----
 
-Great. Success. 
-Now you can safely remove your flash disk without fear.
+Great. Success. Now you can safely remove your flash disk without fear.
 
 Have a nice day.
 Don't forget to smile the whole day.
@@ -111,16 +109,14 @@ def check_if_flash_disk_mounted():
     path_search=re.search("^(\w+)\W.*(/media/.*)$",output,flags=re.MULTILINE)
     if path_search is None:
         exit_with_error(1,"""
-Vypadá to, že flash disk není připojen 
-a můžete ho odebrat.
+Vypadá to, že flash disk není připojen a můžete ho odebrat.
 
 Nebo se může jednat o chybu.
 Kontaktujte prosím svého poradce pro počítač.
 
 ----
 
-It looks like no flash disk is mounted
-and you can remove it.
+It looks like no flash disk is mounted and you can remove it.
 
 Or an error might occur.
 Please contact your computer advisor.
@@ -129,11 +125,8 @@ Please contact your computer advisor.
 
 For computer adviser:
 
-Output of the command 'lsblk -l' was searched for string '/media/'
-but no match was found.
-This may mean that flash disk is not mounted
-or the mount point is not on an expected path
-in folder '/media/' .
+Output of the command 'lsblk -l' was searched for string '/media/' but no match was found. 
+This may mean that flash disk is not mounted or the mount point is not on an expected path in folder '/media/' .
 
 Output of the command 'lsblk -l' follows:
 
