@@ -22,8 +22,8 @@ import sys
 def parse_arguments():
     d="""
 Unmount flash disk so it can be safely removed. 
-Prepare the application for all possible situations and errors.
-Developed for Xubuntu operating system. 
+Prepare the application for all possible situations and errors. 
+Developed for Xubuntu operating system in 2019-05, but it may work on other operating systems and versions too. 
 Software Python version 3.7 or higher is required to be installed, because the argument 'capture_output' of the method 'subprocess.run' was added in python 3.7 . 
 Software Zenity is required to be installed. 
 Software lsblk is required to be installed. 
