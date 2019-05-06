@@ -59,7 +59,14 @@ Great. Success. Now you can safely remove your flash disk without fear.
 Have a nice day.
 Don't forget to smile the whole day.
 Today is a beautiful day.
-"""
+
+----
+
+For computer adviser:
+
+Output of the command 'lsblk -l' follows:
+
+"""+subprocess.run(["lsblk","-l"],capture_output=True).stdout.decode("utf-8")
     print(m)
     subprocess.run(["zenity","--info","--ellipsize","--icon-name","weather-clear","--text",m],capture_output=True)
 
